@@ -13,10 +13,10 @@ Usage:
 7. Sleep in peace
 
 Options:
-    -w                 Window of time plus or minus the set time to send the message. It will send randomly within the window. In minutes if time is HH:MM or in seconds if time is HH:MM:SS
-    -t                 Time for the message to be sent in HH:MM format. If HH:MM:SS is used, it will work but the window argument will apply to seconds and not minutes.
-    -m                 Message to be sent. Needs double quotation marks surrounding it if the message is more than one word.
-    -M,T,W,H,F,S,U     Day of the week where H=Thursday and U=Sunday. Python's getopt does not support multi-letter options.
+- w                 Window of time plus or minus the set time to send the message. It will send randomly within the window. In minutes if time is HH:MM or in seconds if time is HH:MM:SS
+- t                 Time for the message to be sent in HH:MM format. If HH:MM:SS is used, it will work but the window argument will apply to seconds and not minutes.
+- m                 Message to be sent. Needs double quotation marks surrounding it if the message is more than one word.
+- M,T,W,H,F,S,U     Day of the week where H=Thursday and U=Sunday. Python's getopt does not support multi-letter options.
 
 Compatability:
  - Only works on Windows (pygetwindow compatability)
