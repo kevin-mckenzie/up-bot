@@ -62,6 +62,8 @@ def randomize_time(old_time, mins_w):
         print("Could not adjust window.")
         return old_time
 
+def print_task(msg, time, dow):
+    print(f"Sending \"{msg}\" at {time} on {dow}")
 
 def main():
     if len(argv) == 1:
@@ -94,19 +96,33 @@ def main():
                     print("Invalid window, applying default 0 minute adjustment.")
                     w = 0
             elif o == '-M':
-                schedule.every().monday.at(randomize_time(TIME, w)).do(up)
+                t = randomize_time(TIME, w)
+                schedule.every().monday.at(t).do(up)
+                print_task(MESSAGE, t, "Monday")
             elif o == '-T':
-                schedule.every().tuesday.at(randomize_time(TIME, w)).do(up)
+                t = randomize_time(TIME, w)
+                schedule.every().tuesday.at(t).do(up)
+                print_task(MESSAGE, t, "Tuesday")
             elif o == '-W':
-                schedule.every().wednesday.at(randomize_time(TIME, w)).do(up)
+                t = randomize_time(TIME, w)
+                schedule.every().wednesday.at(t).do(up)
+                print_task(MESSAGE, t, "Wednesday")
             elif o == '-H':
-                schedule.every().thursday.at(randomize_time(TIME, w)).do(up)
+                t = randomize_time(TIME, w)
+                schedule.every().thursday.at(t).do(up)
+                print_task(MESSAGE, t, "Thursday")
             elif o == '-F':
-                schedule.every().friday.at(randomize_time(TIME, w)).do(up)
+                t = randomize_time(TIME, w)
+                schedule.every().friday.at(t).do(up)
+                print_task(MESSAGE, t, "Friday")
             elif o == '-S':
-                schedule.every().saturday.at(randomize_time(TIME, w)).do(up)
+                t = randomize_time(TIME, w)
+                schedule.every().saturday.at(t).do(up)
+                print_task(MESSAGE, t, "Saturday")
             elif o == '-U':
-                schedule.every().sunday.at(randomize_time(TIME, w)).do(up)
+                t = randomize_time(TIME, w)
+                schedule.every().sunday.at(t).do(up)
+                print_task(MESSAGE, t, "Sunday")
             else:
                 print("Invalid option")
                 printusage()
