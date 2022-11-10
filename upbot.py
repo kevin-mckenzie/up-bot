@@ -64,6 +64,10 @@ def randomize_time(old_time, mins_w):
 
 
 def main():
+    if len(argv) == 1:
+        printusage()
+        return
+    
     #set default time window and time to send message
     w = 0
     TIME = "05:30"
